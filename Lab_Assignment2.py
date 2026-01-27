@@ -63,7 +63,7 @@ List_3=[5, 22, 'apple', 'car', 24, 22]
 print("Creating a new list List_3:", List_3)
 print("Copying all elements of List_3 to List_1...")
 List_1 = copy(List_3, List_1)
-print("List_3 :", List_1)
+print("List_1 :", List_1)
 
 print("\n=========================================")
 print("Count Elements")
