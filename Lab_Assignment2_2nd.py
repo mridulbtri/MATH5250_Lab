@@ -10,15 +10,18 @@ def generate_list(n):
 
 
 def test_pop(L): # removes the last element from the list
+
     start = time.time()
-    L.pop()
+    for i in range(len(L)):
+        L.pop()
     end = time.time()
     return end - start
 
 
 def test_pop_zero(L): #removes the first element from the list
     start = time.time()
-    L.pop(0)
+    for i in range(len(L)):
+        L.pop(0)
     end = time.time()
     return end - start
 
@@ -68,7 +71,7 @@ def run_tests(N):
         t5 = test_reverse_inplace(L.copy())
         t6 = test_reverse_copy(L.copy())
 
-        print("\n===================================\n")
+        print("\n================================================\n")
         print("List size:", n)
 
         print("pop() time:       ", t1)
@@ -85,4 +88,4 @@ def run_tests(N):
 
 
 # Example run
-run_tests(100000)
+run_tests(10000)
