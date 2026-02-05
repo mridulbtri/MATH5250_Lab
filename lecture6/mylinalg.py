@@ -97,9 +97,9 @@ def plot_solution_and_error(x_i, n):
     
     print(f"\n" + "=" * 20, "\n")
     print("ERROR")
-    print(f"Maximum error: {np.max(errors):.2e}")
-    print(f"Min error:     {np.min(errors):.2e}")
-    print(f"Mean error:    {np.mean(errors):.2e}")
+    print(f"Maximum error: {np.max(errors):.6e}")
+    print(f"Min error:     {np.min(errors):.6e}")
+    print(f"Mean error:    {np.mean(errors):.6e}")
     
     
     # Visualize the approximation 
@@ -134,6 +134,10 @@ def plot_solution_and_error(x_i, n):
     plt.show()
 
 # Run
-x_i = np.linspace(-np.pi, np.pi, 51)
-n = 5
-plot_solution_and_error(x_i, n)
+def main():
+    x_i = np.linspace(-np.pi, np.pi, 51)
+    n = 2
+    plot_solution_and_error(x_i, n)
+
+if __name__ == main():
+    main()

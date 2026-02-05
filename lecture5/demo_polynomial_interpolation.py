@@ -18,14 +18,22 @@ def setup_linear_system(x):
     return A, b
 
 def gauss_elimination(A, b):
-
     for j in range(len(A)):
+        # Find maximum absolute value in column j (from row j onwards)
+        max_abs_index = j + np.argmax(np.abs(A[j:, j]))
+        
+        # Swap only if the max is not already at position j
+        if max_abs_index != j:
+            temp_storage_A = A[j, :].copy()
+            temp_storage_b = b[j]
+            A[j, :], b[j] = A[max_abs_index, :], b[max_abs_index]
+            A[max_abs_index, :], b[max_abs_index] = temp_storage_A, temp_storage_b
+        
         for i in range(j+1, len(A)):
             factor = A[i, j]/A[j, j]
             A[i, :] = A[i, :] - factor * A[j, :]
-            b[i] = b[i] -  factor * b[j]
-
-    return A, b 
+            b[i] = b[i] - factor * b[j]
+    return A, b
 
 def backward_substitution(A, b):
     n = len(b)
