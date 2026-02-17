@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def PlotPoly():
-    # --- First: count how many points ---
+
     with open("/Users/mridul/Lecture03/lecture9/poly_data.txt", "r") as fid:
         NumPts = sum(1 for _ in fid)
 
-    # --- Second: read the data ---
+
     x = np.zeros(NumPts, dtype=float)
     y = np.zeros(NumPts, dtype=float)
 
@@ -17,7 +17,7 @@ def PlotPoly():
             x[k] = float(vals[0])
             y[k] = float(vals[1])
 
-    # --- Third: plot ---
+
     plt.rc("font", size=16)
     plt.figure(1)
 
