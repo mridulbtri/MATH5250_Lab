@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int ns[] = {6, 10};
+    int ns[] = {6, 12};
     int n_cases = (int)(sizeof(ns) / sizeof(ns[0]));
 
     for (int ni = 0; ni < n_cases; ni++)
